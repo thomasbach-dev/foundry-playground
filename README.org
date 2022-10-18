@@ -1,0 +1,13 @@
+Following https://github.com/shazow/foundry.nix#usage-development-shell:
++ enable nix with flake feature:
+  #+begin_src nix
+    nix = {
+      package = pkgs.nixFlakes;
+      extraOptions = lib.optionalString (config.nix.package == pkgs.nixFlakes)
+        "experimental-features = nix-command flakes";
+    };
+  #+end_src
++ created [[./flake.nix]] file;
++ enter dev env using ~nix develop~;
++ run ~forge init --force --no-commit~;
++ ~forge build --no-auto-detect~ and ~forge test~ should now work;
