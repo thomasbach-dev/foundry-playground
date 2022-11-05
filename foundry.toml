@@ -5,3 +5,6 @@ libs = ['lib']
 
 auto_detect_solc = false
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
+
+# Fix compiler error "ParseErorr: Source … not found: File not Found."
+remappings = ['openzeppelin-contracts/=lib/openzeppelin-contracts/']
